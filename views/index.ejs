@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="styles/styles.css" />
+<div class="home-wrapper">
+  <div class="photo-selection">
+    <form action="/submit" method="POST">
+      <button class="btn" type="submit" value="marco" name="choice">
+        <img class="phto" src="img/marco.jpg" alt="marco-photo" />
+      </button>
+      <button class="btn" type="submit" value="rachel" name="choice">
+        <img class="phto" src="img/rachel.jpg" alt="rachel-photo" />
+      </button>
+      <button class="btn" type="submit" value="vayne" name="choice">
+        <img class="phto" src="img/vayne.png" alt="vayne-photo" />
+      </button>
+      <button class="btn" type="submit" value="ysa" name="choice">
+        <img class="phto" src="img/ysa.jpg" alt="ysa-photo" />
+      </button>
+    </form>
+  </div>
+
+  <div class="info-panel">
+    <% if(!locals.phto){%>
+    <h1>Hello, no data for now :C</h1>
+    <% }else{%>
+    <h2>Name: <%= phto.name %></h2>
+    <h3>Age: <%= phto.age %></h3>
+    <ul>
+      <% phto.talents.forEach(e => {%>
+      <li><%= e.talents %></li>
+      <% }); %>
+    </ul>
+    <ul>
+      <% phto.talents.forEach(e => {%>
+      <li><%= e.job %></li>
+      <% }) %>
+    </ul>
+    <% } %>
+  </div>
+</div>
